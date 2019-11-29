@@ -81,7 +81,7 @@ public class PlayerHandler : MonoBehaviour
             {
                 curHealth = 0; ;
             }
-            if (curHealth < maxHealth && curHealth > 0 && canHeal)
+            if (curHealth < maxHealth && curHealth >= 0 && canHeal)
             {
                 HealOverTime();
             }
@@ -99,7 +99,7 @@ public class PlayerHandler : MonoBehaviour
                 Death();
             }
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 curMana -= 5;
             }
@@ -111,7 +111,7 @@ public class PlayerHandler : MonoBehaviour
             {
                 curMana = 0;
             }
-            if (curMana < maxMana && curMana > 0 && canUseMana)
+            if (curMana < maxMana && curMana >= 0 && canUseMana)
             {
                 ManaOverTime();
             }
@@ -128,7 +128,7 @@ public class PlayerHandler : MonoBehaviour
             {
                 curStamina = 0;
             }
-            if (curStamina < maxStamina && curStamina > 0 && canUseStamina)
+            if (curStamina < maxStamina && curStamina >= 0 && canUseStamina)
             {
                 StaminaOverTime();
             }

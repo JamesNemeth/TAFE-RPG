@@ -3,9 +3,16 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    void Start()
+    public GameObject sword;
+
+    public ItemHandler Items;
+
+    public virtual void Interactable()
     {
-        
+        // This method is meant to be overwritten
+        Debug.Log("Interacting with " + transform.name);
+
+        print("working Interact");
     }
 
     void Update()
@@ -34,15 +41,16 @@ public class Interact : MonoBehaviour
                     break;
                     case "Item":
                         Debug.Log("Picked up Item");
+                        Destroy(sword);
                         ItemHandler handler = hitInfo.transform.GetComponent<ItemHandler>();
-                            if(handler != null)
+                        if(handler != null)
                         {
-                            handler.OnCollection();
+                            handler.OnCollection();   
                         }
                     break;
-
                 }
             }
+            
         }
     }
 }

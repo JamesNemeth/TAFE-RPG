@@ -33,37 +33,36 @@ public class LinearInventory : MonoBehaviour
 
     void Start()
     {
-        inv.Add(ItemData.CreatItem(0));
-        inv.Add(ItemData.CreatItem(1));
-        inv.Add(ItemData.CreatItem(2));
-        inv.Add(ItemData.CreatItem(3));
-        inv.Add(ItemData.CreatItem(4));
-        inv.Add(ItemData.CreatItem(5));
-        inv.Add(ItemData.CreatItem(6));
-        inv.Add(ItemData.CreatItem(100));
-        inv.Add(ItemData.CreatItem(101));
-        inv.Add(ItemData.CreatItem(102));
-        inv.Add(ItemData.CreatItem(103));
-        inv.Add(ItemData.CreatItem(104));
-        inv.Add(ItemData.CreatItem(200));
-        inv.Add(ItemData.CreatItem(201));
-        inv.Add(ItemData.CreatItem(202));
-        inv.Add(ItemData.CreatItem(300));
-        inv.Add(ItemData.CreatItem(301));
-        inv.Add(ItemData.CreatItem(400));
-        inv.Add(ItemData.CreatItem(401));
-        inv.Add(ItemData.CreatItem(402));
-        inv.Add(ItemData.CreatItem(403));
-        inv.Add(ItemData.CreatItem(404));
-        inv.Add(ItemData.CreatItem(500));
-        inv.Add(ItemData.CreatItem(501));
-        inv.Add(ItemData.CreatItem(502));
-        inv.Add(ItemData.CreatItem(600));
-        inv.Add(ItemData.CreatItem(601));
-        inv.Add(ItemData.CreatItem(602));
-        inv.Add(ItemData.CreatItem(603));
-        inv.Add(ItemData.CreatItem(604));
-        inv.Add(ItemData.CreatItem(700));
+        inv.Add(ItemData.CreateItem(0));
+        inv.Add(ItemData.CreateItem(1));
+        inv.Add(ItemData.CreateItem(2));
+        inv.Add(ItemData.CreateItem(3));
+        inv.Add(ItemData.CreateItem(4));
+        inv.Add(ItemData.CreateItem(5));
+        inv.Add(ItemData.CreateItem(6));
+        inv.Add(ItemData.CreateItem(100));
+        inv.Add(ItemData.CreateItem(101));
+        inv.Add(ItemData.CreateItem(102));
+        inv.Add(ItemData.CreateItem(103));
+        inv.Add(ItemData.CreateItem(104));
+        inv.Add(ItemData.CreateItem(200));
+        inv.Add(ItemData.CreateItem(201));
+        inv.Add(ItemData.CreateItem(300));
+        inv.Add(ItemData.CreateItem(301));
+        inv.Add(ItemData.CreateItem(400));
+        inv.Add(ItemData.CreateItem(401));
+        inv.Add(ItemData.CreateItem(402));
+        inv.Add(ItemData.CreateItem(403));
+        inv.Add(ItemData.CreateItem(404));
+        inv.Add(ItemData.CreateItem(500));
+        inv.Add(ItemData.CreateItem(501));
+        inv.Add(ItemData.CreateItem(502));
+        inv.Add(ItemData.CreateItem(600));
+        inv.Add(ItemData.CreateItem(601));
+        inv.Add(ItemData.CreateItem(602));
+        inv.Add(ItemData.CreateItem(603));
+        inv.Add(ItemData.CreateItem(604));
+        inv.Add(ItemData.CreateItem(700));
         showInv = true;
     }
     private void Update()
@@ -87,7 +86,7 @@ public class LinearInventory : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.I))
         {
-            inv.Add(ItemData.CreatItem(Random.Range(0, 3)));
+            inv.Add(ItemData.CreateItem(Random.Range(0, 3)));
         }
         if (Input.GetKey(KeyCode.KeypadPlus))
         {

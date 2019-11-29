@@ -10,7 +10,10 @@ public class ItemHandler : MonoBehaviour
 
     public void OnCollection()
     {
-        if(itemType == ItemTypes.Money)//are we money?
+        LinearInventory.inv.Add(ItemData.CreateItem(itemId));
+        Destroy(gameObject);
+
+        if (itemType == ItemTypes.Money)//are we money?
         {
             LinearInventory.money += amount;
         }
@@ -34,7 +37,7 @@ public class ItemHandler : MonoBehaviour
             }
             else
             {
-                LinearInventory.inv.Add(ItemData.CreatItem(itemId));
+                LinearInventory.inv.Add(ItemData.CreateItem(itemId));
                 if(amount > 1)
                 {
                     for (int i = 0; i < LinearInventory.inv.Count; i++)
@@ -49,7 +52,7 @@ public class ItemHandler : MonoBehaviour
         }
         else//no, just add
         {
-            LinearInventory.inv.Add(ItemData.CreatItem(itemId));
+            LinearInventory.inv.Add(ItemData.CreateItem(itemId));
         }
         Destroy(gameObject);
     }

@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Item 
 {
     #region Variable
+    public Sprite icon;
+    public bool isDefaultItem = false;
     //id of the item for programmers and developers
     private int _id;
     //Display name and description for players

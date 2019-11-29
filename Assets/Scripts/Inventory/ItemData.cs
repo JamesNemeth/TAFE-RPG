@@ -2,7 +2,7 @@
 
 public static class ItemData
 {
-    public static Item CreatItem(int itemId)
+    public static Item CreateItem(int itemId)
     {
         string name = "";
         string description = "";
