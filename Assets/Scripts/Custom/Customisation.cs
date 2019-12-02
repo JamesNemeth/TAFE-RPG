@@ -176,15 +176,6 @@ public class Customisation : MonoBehaviour
                 break;
         }
     }
-    private void Display()
-    {
-        if (scr.x != Screen.width / 16 || scr.y != Screen.height / 9)
-        {
-            scr.x = Screen.width / 16;
-            scr.y = Screen.height / 9;
-        }
-        DisplayStats();
-    }
     
     public void SkinChangeDown()
     {
@@ -242,6 +233,15 @@ public class Customisation : MonoBehaviour
         SetTexture("Hair", Random.Range(0, hairMax - 1));
         SetTexture("Clothes", Random.Range(0, clothesMax - 1));
         SetTexture("Armour", Random.Range(0, armourMax - 1));
+    }
+    private void OnGUI()
+    {
+        if (scr.x != Screen.width / 16 || scr.y != Screen.height / 9)
+        {
+            scr.x = Screen.width / 16;
+            scr.y = Screen.height / 9;
+        }
+        DisplayStats();
     }
     void DisplayStats()
     {
