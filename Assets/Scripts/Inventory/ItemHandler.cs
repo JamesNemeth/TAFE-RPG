@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemHandler : MonoBehaviour
 {
-    public int itemId = 0;
+    public int itemId = 100;
     public ItemTypes itemType;
     public int amount = 1;
 

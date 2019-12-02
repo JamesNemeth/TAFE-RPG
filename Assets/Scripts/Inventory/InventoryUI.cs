@@ -7,13 +7,14 @@ public class InventoryUI : MonoBehaviour
 	public Transform itemsParent;   // The parent object of all the items
     public GameObject inventoryUI;  // The entire UI
 
+    public int itemId = 0;
+
     LinearInventory inventory;    // Our current inventory
 
-    InventorySlot[] slots;  // List of all the slots
+    public InventorySlot[] slots;  // List of all the slots
 
     void Start()
     {
-
         // Populate our slots array
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
@@ -24,10 +25,6 @@ public class InventoryUI : MonoBehaviour
         UpdateUI();
     }
 
-    // Update the inventory UI by:
-    //		- Adding items
-    //		- Clearing empty slots
-    // This is called using a delegate on the Inventory.
     void UpdateUI()
     {
         // Loop through all the slots
@@ -37,7 +34,8 @@ public class InventoryUI : MonoBehaviour
             {
                 if (i < LinearInventory.inv.Count)  // If there is an item to add
                 {
-                    slots[i].AddItem(LinearInventory.inv[i]);   // Add it
+                    slots[i].AddItem(LinearInventory.inv[i]);
+                    LinearInventory.inv.Add(ItemData.CreateItem(itemId));// Add it
                 }
                 else
                 {

@@ -20,5 +20,7 @@ public class ItemPickup : Interact
     {
         Destroy(gameObject);
         LinearInventory.inv.Add(ItemData.CreateItem(itemId));   // Add to inventory
+
+        print("Pick Up working");
     }
 }
