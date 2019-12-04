@@ -31,7 +31,7 @@ public class LinearInventory : MonoBehaviour
 
     #endregion
 
-    void Start()
+    /*void Start()
     {
         inv.Add(ItemData.CreateItem(0));
         inv.Add(ItemData.CreateItem(1));
@@ -47,6 +47,7 @@ public class LinearInventory : MonoBehaviour
         inv.Add(ItemData.CreateItem(104));
         inv.Add(ItemData.CreateItem(200));
         inv.Add(ItemData.CreateItem(201));
+        inv.Add(ItemData.CreateItem(202));
         inv.Add(ItemData.CreateItem(300));
         inv.Add(ItemData.CreateItem(301));
         inv.Add(ItemData.CreateItem(400));
@@ -64,8 +65,8 @@ public class LinearInventory : MonoBehaviour
         inv.Add(ItemData.CreateItem(604));
         inv.Add(ItemData.CreateItem(700));
         showInv = true;
-    }
-    private void Update()
+    }*/
+  /*  private void Update()
     {
         if (Input.GetButtonDown("Inventory") && !PauseMenu.isPaused)
         {
@@ -92,8 +93,8 @@ public class LinearInventory : MonoBehaviour
         {
             inv[10].Amount++;
         }
-    }
-    void OnGUI()
+    }*/
+   /* void OnGUI()
     {
         if (showInv && !PauseMenu.isPaused)
         {
@@ -343,7 +344,7 @@ public class LinearInventory : MonoBehaviour
             }
 
         }
-    }
+    }*/
 }
 
 

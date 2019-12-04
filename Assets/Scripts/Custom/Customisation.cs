@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Customisation : MonoBehaviour
@@ -27,7 +26,6 @@ public class Customisation : MonoBehaviour
     public Stats[] playerStats = new Stats[6];
     public CharacterClass charClass;
     public int selectedIndex, points = 10;
-    public GameObject pointsText;
     public PlayerHandler player;
     public PlayerSaveAndLoad saveNew;
     void Start()
@@ -176,7 +174,7 @@ public class Customisation : MonoBehaviour
                 break;
         }
     }
-    
+    #region Player
     public void SkinChangeDown()
     {
         SetTexture("Skin", -1);
@@ -234,62 +232,13 @@ public class Customisation : MonoBehaviour
         SetTexture("Clothes", Random.Range(0, clothesMax - 1));
         SetTexture("Armour", Random.Range(0, armourMax - 1));
     }
-    private void OnGUI()
-    {
-        if (scr.x != Screen.width / 16 || scr.y != Screen.height / 9)
-        {
-            scr.x = Screen.width / 16;
-            scr.y = Screen.height / 9;
-        }
-        DisplayStats();
-    }
-    public void CharacterNameDown()
-    {
-        selectedIndex--;
-        if (selectedIndex < 0)
-        {
-            selectedIndex = 11;
-        }
-        ChooseClass(selectedIndex);
-    }
-    public void CharacterNameUp()
-    {
-        selectedIndex++;
-        if (selectedIndex > 11)
-        {
-            selectedIndex = 0;
-        }
-        ChooseClass(selectedIndex);
-    }
-    public void PointsUp()
-    {
-        for (int s = 0; s < playerStats.Length; s++)
-        {
-            if (points > 0)
-            {
-                points--;
-                playerStats[s].tempStat++;
-            }
-        }
-    }
-    public void PointsDown()
-    {
-        for (int s = 0; s < playerStats.Length; s++)
-        {
-            if (points < 10 && playerStats[s].tempStat > 0)
-            {
-                points++;
-                playerStats[s].tempStat--;
-            }
-        }
-    }
-
+        #endregion
     void DisplayStats()
     {
         characterName = GUI.TextField(new Rect(scr.x * 6, scr.y * 7.5f, scr.x * 4, scr.y * 0.5f), characterName, 20);
         int i = 0;
         #region Class
-        /*if (GUI.Button(new Rect(scr.x * 13.25f, scr.y + i * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), "<"))
+        if (GUI.Button(new Rect(scr.x * 13.25f, scr.y + i * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), "<"))
         {
             selectedIndex--;
             if (selectedIndex < 0)
@@ -298,7 +247,6 @@ public class Customisation : MonoBehaviour
             }
             ChooseClass(selectedIndex);
         }
-        
         GUI.Box(new Rect(scr.x * 13.75f, scr.y + i * (0.5f * scr.y), scr.x * 1.5f, scr.y * 0.5f), charClass.ToString());
         if (GUI.Button(new Rect(scr.x * 15.25f, scr.y + i * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), ">"))
         {
@@ -313,7 +261,6 @@ public class Customisation : MonoBehaviour
         #endregion
         #region StatDistribution
         //in variables public int points = 10
-        
         GUI.Box(new Rect(scr.x * 13.25f, scr.y + i * (0.5f * scr.y), scr.x * 2.5f, scr.y * 0.5f), "Points: " + points);
 
         for (int s = 0; s < playerStats.Length; s++)
@@ -337,10 +284,7 @@ public class Customisation : MonoBehaviour
                 }
             }
         }
-        */
         #endregion
-
-
     }
     void ChooseClass(int className)
     {
@@ -457,7 +401,7 @@ public class Customisation : MonoBehaviour
         }
     }
 }
-public enum CharacterClass
+/*public enum CharacterClass
 {
     Barbarian,
     Bard,
@@ -471,4 +415,4 @@ public enum CharacterClass
     Paladin,
     Ranger,
     Rogue
-}
+}*/

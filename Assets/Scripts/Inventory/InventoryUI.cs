@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-	public Transform itemsParent;   // The parent object of all the items
+    public Transform itemsParent;   // The parent object of all the items
     public GameObject inventoryUI;  // The entire UI
 
     public int itemId = 0;
@@ -40,7 +41,7 @@ public class InventoryUI : MonoBehaviour
                 else
                 {
                     // Otherwise clear the slot
-                    slots[i].ClearSlot();
+                    slots[i].OnRemoveButton();
                 }
             }
         }

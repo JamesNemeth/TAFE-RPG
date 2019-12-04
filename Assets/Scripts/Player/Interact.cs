@@ -22,13 +22,13 @@ public class Interact : MonoBehaviour
             Ray interactionRay;
             interactionRay = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
             RaycastHit hitInfo;
-            if(Physics.Raycast(interactionRay, out hitInfo, 10))
+            if (Physics.Raycast(interactionRay, out hitInfo, 10))
             {
-                switch(hitInfo.collider.tag)
+                switch (hitInfo.collider.tag)
                 {
                     case "NPC":
                         DialogueOption dlg = hitInfo.transform.GetComponent<DialogueOption>();
-                        if(dlg != null)
+                        if (dlg != null)
                         {
                             dlg.showDlg = true;
 
@@ -38,19 +38,19 @@ public class Interact : MonoBehaviour
                             Cursor.lockState = CursorLockMode.None;
                         }
                         Debug.Log("NPC Interaction");
-                    break;
+                        break;
                     case "Item":
                         Debug.Log("Picked up Item");
                         Destroy(sword);
                         ItemHandler handler = hitInfo.transform.GetComponent<ItemHandler>();
-                        if(handler != null)
+                        if (handler != null)
                         {
-                            handler.OnCollection();   
+                            handler.OnCollection();
                         }
-                    break;
+                        break;
                 }
             }
-            
+
         }
     }
 }

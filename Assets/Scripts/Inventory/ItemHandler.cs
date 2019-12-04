@@ -17,14 +17,14 @@ public class ItemHandler : MonoBehaviour
         {
             LinearInventory.money += amount;
         }
-        else if(itemType == ItemTypes.Craftable || itemType == ItemTypes.Food || itemType == ItemTypes.Potion || itemType == ItemTypes.Ingredient)
+        else if (itemType == ItemTypes.Craftable || itemType == ItemTypes.Food || itemType == ItemTypes.Potion || itemType == ItemTypes.Ingredient)
         //are we stackable?
         {
             int found = 0;
             int addIndex = 0;
             for (int i = 0; i < LinearInventory.inv.Count; i++)
             {
-                if(itemId == LinearInventory.inv[i].ID)
+                if (itemId == LinearInventory.inv[i].ID)
                 {
                     found = 1;
                     addIndex = i;
@@ -38,11 +38,11 @@ public class ItemHandler : MonoBehaviour
             else
             {
                 LinearInventory.inv.Add(ItemData.CreateItem(itemId));
-                if(amount > 1)
+                if (amount > 1)
                 {
                     for (int i = 0; i < LinearInventory.inv.Count; i++)
                     {
-                        if(itemId == LinearInventory.inv[i].ID)
+                        if (itemId == LinearInventory.inv[i].ID)
                         {
                             LinearInventory.inv[i].Amount = amount;
                         }

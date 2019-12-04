@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 413106795933888237}
   m_Layer: 0
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: Renderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,7 +364,9 @@ GameObject:
   m_Component:
   - component: {fileID: 413106795920719863}
   - component: {fileID: 413106795929767981}
-  - component: {fileID: 182284955}
+  - component: {fileID: 7811164607551972303}
+  - component: {fileID: 8847434124374643808}
+  - component: {fileID: 1791403288}
   m_Layer: 0
   m_Name: Prefab
   m_TagString: Untagged
@@ -407,7 +409,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &182284955
+--- !u!114 &7811164607551972303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413106795920286615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76afcabbb5fc56449c38f0062392e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1791403288}
+--- !u!114 &8847434124374643808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -420,18 +435,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 413106795933888237}
-  skin: []
-  eyes: []
-  mouth: []
-  hair: []
-  clothes: []
-  armour: []
+  skin:
+  - {fileID: 2800000, guid: 5272883e6ce1663438d82240a23c0f2a, type: 3}
+  - {fileID: 2800000, guid: 5e3740196d7e16046b5bd2ad960dfec8, type: 3}
+  - {fileID: 2800000, guid: 1306cb857428a534dbd40b59952fd453, type: 3}
+  - {fileID: 2800000, guid: 2e5215d2eb2f60245bc01f627df43065, type: 3}
+  eyes:
+  - {fileID: 2800000, guid: 69418b8308cb16e48823daf771ee944c, type: 3}
+  - {fileID: 2800000, guid: 1a446babcb4698e4db7c6ab2ff2021ff, type: 3}
+  - {fileID: 2800000, guid: 8d33f98314465d84ba2fbd125ea9d413, type: 3}
+  - {fileID: 2800000, guid: 8132b4cb9b3155641b3468a1736eb519, type: 3}
+  mouth:
+  - {fileID: 2800000, guid: e1fc61c8aea301a47b1bd423ac08f7bc, type: 3}
+  - {fileID: 2800000, guid: e13e92e533e886245a02407d5c7c97be, type: 3}
+  - {fileID: 2800000, guid: 58fb3344530faac4bbcaeb054832740a, type: 3}
+  hair:
+  - {fileID: 2800000, guid: 489fd0cade46bc546bbca2b0341233f9, type: 3}
+  - {fileID: 2800000, guid: b241c82b64e3c164b90789c357bb826d, type: 3}
+  - {fileID: 2800000, guid: 9b08cc31398837545a59a9af36946c75, type: 3}
+  - {fileID: 2800000, guid: 905c658447c081e449ae25830f2e146f, type: 3}
+  - {fileID: 2800000, guid: 978f2b2e9af1f764c92a74da72126943, type: 3}
+  clothes:
+  - {fileID: 2800000, guid: 77d11182f3974824c93114ab75af04c1, type: 3}
+  - {fileID: 2800000, guid: b93a9edb53b04a14c800abbd14d9420e, type: 3}
+  - {fileID: 2800000, guid: 925b997ccca71744084744e02bae16b3, type: 3}
+  - {fileID: 2800000, guid: 5509ddfc23c86cd43889dce063b996d6, type: 3}
+  - {fileID: 2800000, guid: c1be0d8d32e15714c9f0cd6ecdee01cc, type: 3}
+  - {fileID: 2800000, guid: 56ccc03ccb8ccc3459d4ff1cc326103c, type: 3}
+  - {fileID: 2800000, guid: dd90c17cd3514d4439936699e7ead3c8, type: 3}
+  - {fileID: 2800000, guid: 7b291ca5d4d5b454cad4adce46f77842, type: 3}
+  - {fileID: 2800000, guid: 6134aa59c74808a46b7609eae97119d5, type: 3}
+  - {fileID: 2800000, guid: e051b491886b1d740a2fa00326e54d1d, type: 3}
+  - {fileID: 2800000, guid: fb5e254adb55cc64281ab9c902a61b25, type: 3}
+  armour:
+  - {fileID: 2800000, guid: d37304c3352b6ee41ade7efac47436b5, type: 3}
+  - {fileID: 2800000, guid: 9391d00a6be748543b7444c260435181, type: 3}
+  - {fileID: 2800000, guid: 07282572cb20942468653a7821020896, type: 3}
+  - {fileID: 2800000, guid: 25ceaa2890a2a1a42b98dfb33745e3f8, type: 3}
+  - {fileID: 2800000, guid: d041fd3a25c7beb4897bde8698dce8c9, type: 3}
+  - {fileID: 2800000, guid: 2b140bc3927fa3f4fa6ddb673b8a1886, type: 3}
+  - {fileID: 2800000, guid: 9a5264ced51432042bf73f76139c3fbf, type: 3}
+  - {fileID: 2800000, guid: 5bbf50a9164a87f48be6ade99bea1164, type: 3}
+  - {fileID: 2800000, guid: 61d7b87dbe14aaf4e9489a00ce60283a, type: 3}
+  - {fileID: 2800000, guid: d01562c9e69369f4585b00892ab558b5, type: 3}
+  - {fileID: 2800000, guid: 3f71df0752ae2d24486a0660afb1cdb4, type: 3}
   skinIndex: 0
   eyesIndex: 0
   mouthIndex: 0
   hairIndex: 0
   clothesIndex: 0
-  aromourIndex: 0
+  armourIndex: 0
   skinMax: 4
   eyesMax: 4
   mouthMax: 3
@@ -439,26 +492,89 @@ MonoBehaviour:
   clothesMax: 11
   armourMax: 11
   characterName: Enter Name Here
+  scr: {x: 0, y: 0}
   playerStats:
-  - statName: Strength
+  - statName: 
     statValue: 0
     tempStat: 0
-  - statName: Dexterity
+  - statName: 
     statValue: 0
     tempStat: 0
-  - statName: Constituition
+  - statName: 
     statValue: 0
     tempStat: 0
-  - statName: Wisdom
+  - statName: 
     statValue: 0
     tempStat: 0
-  - statName: Intellegence
+  - statName: 
     statValue: 0
     tempStat: 0
-  - statName: Charisma
+  - statName: 
     statValue: 0
     tempStat: 0
-  characterClass: 0
+  charClass: 0
+  selectedIndex: 0
+  points: 10
+  player: {fileID: 1791403288}
+  saveNew: {fileID: 0}
+--- !u!114 &1791403288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413106795920286615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5c0cec619136748882d556a13a5b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  curMana: 0
+  curStamina: 0
+  maxHealth: 0
+  maxMana: 0
+  maxStamina: 0
+  healRate: 0
+  ManaPerSecond: 0
+  staminaPerSecond: 0
+  stats:
+  - name: 
+    value: 0
+  - name: 
+    value: 0
+  - name: 
+    value: 0
+  - name: 
+    value: 0
+  - name: 
+    value: 0
+  - name: 
+    value: 0
+  radialHealthIcon: {fileID: 0}
+  radialManaIcon: {fileID: 0}
+  radialStaminaIcon: {fileID: 0}
+  deathClip: {fileID: 0}
+  damageImage: {fileID: 0}
+  deathImage: {fileID: 0}
+  text: {fileID: 0}
+  flashSpeed: 5
+  flashColor: {r: 1, g: 0, b: 0, a: 0.2}
+  healTimer: 0
+  manaTimer: 0
+  staminaTimer: 0
+  curCheckPoint: {fileID: 0}
+  saveAndLoad: {fileID: 0}
+  custom: 1
+  skinIndex: 0
+  eyesIndex: 0
+  mouthIndex: 0
+  hairIndex: 0
+  clothesIndex: 0
+  armourIndex: 0
+  charClass: 0
+  characterName: 
+  firstCheckPointName: First Checkpoint
 --- !u!1 &413106795920286617
 GameObject:
   m_ObjectHideFlags: 0

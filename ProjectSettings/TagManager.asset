@@ -8,6 +8,9 @@ TagManager:
   - NPC
   - Item
   - CheckPoint
+  - Renderer
+  - Increasetext
+  - Decreasetext
   layers:
   - Default
   - TransparentFX
