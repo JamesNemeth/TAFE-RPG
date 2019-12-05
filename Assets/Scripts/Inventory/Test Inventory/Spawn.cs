@@ -7,12 +7,9 @@ public class Spawn : MonoBehaviour
     public GameObject item;
     public Transform dropLocation;
 
-    /*private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }*/
     public void SpawnDroppedItem()
     {
+        // when the button that this function that is attached to is clicked, make the that is in the GameObject item slot at dropLocation
         Instantiate(item, dropLocation.position, Quaternion.identity);
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.40601945, g: 0.475546, b: 0.6479559, a: 1}
+  m_IndirectSpecularColor: {r: 0.4060194, g: 0.47554594, b: 0.64795583, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7248,8 +7248,9 @@ AudioSource:
   m_GameObject: {fileID: 1519018522}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ce2d0c5754ce02f47a9fb386e3e22b5d,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: adaec6848086fe046ae7d00615ac6983, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9359,11 +9360,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1519018526}
     m_Modifications:
-    - target: {fileID: 470752440906196238, guid: d4ca813240471b143ae89ec143a32a12,
-        type: 3}
-      propertyPath: m_Name
-      value: dropLocation
-      objectReference: {fileID: 0}
     - target: {fileID: 470752440906196239, guid: d4ca813240471b143ae89ec143a32a12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9418,6 +9414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470752440906196238, guid: d4ca813240471b143ae89ec143a32a12,
+        type: 3}
+      propertyPath: m_Name
+      value: dropLocation
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4ca813240471b143ae89ec143a32a12, type: 3}
@@ -10279,6 +10280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 6643001314751951256, guid: c7713420a27483f46a45da1335f2a601,
+        type: 3}
+      propertyPath: dropLocation
+      value: 
+      objectReference: {fileID: 16900261}
     - target: {fileID: 974698880668354969, guid: c7713420a27483f46a45da1335f2a601,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10384,11 +10390,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6643001314751951256, guid: c7713420a27483f46a45da1335f2a601,
-        type: 3}
-      propertyPath: dropLocation
-      value: 
-      objectReference: {fileID: 16900261}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7713420a27483f46a45da1335f2a601, type: 3}
 --- !u!222 &7175479590723313652
@@ -10531,6 +10532,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apple
       objectReference: {fileID: 0}
+    - target: {fileID: 7377757166058524236, guid: 18804762364c5a948955610cf51ee3dc,
+        type: 3}
+      propertyPath: dropLocation
+      value: 
+      objectReference: {fileID: 16900261}
     - target: {fileID: 5152282900418258289, guid: 18804762364c5a948955610cf51ee3dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10636,11 +10642,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7377757166058524236, guid: 18804762364c5a948955610cf51ee3dc,
-        type: 3}
-      propertyPath: dropLocation
-      value: 
-      objectReference: {fileID: 16900261}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18804762364c5a948955610cf51ee3dc, type: 3}
 --- !u!1001 &8919433186456563844
@@ -10655,6 +10656,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Potion
       objectReference: {fileID: 0}
+    - target: {fileID: 8403489813225996401, guid: 873140f4c58b2834fb1ec03013c7749b,
+        type: 3}
+      propertyPath: dropLocation
+      value: 
+      objectReference: {fileID: 16900261}
     - target: {fileID: 2135583054320357912, guid: 873140f4c58b2834fb1ec03013c7749b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10760,11 +10766,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8403489813225996401, guid: 873140f4c58b2834fb1ec03013c7749b,
-        type: 3}
-      propertyPath: dropLocation
-      value: 
-      objectReference: {fileID: 16900261}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 873140f4c58b2834fb1ec03013c7749b, type: 3}
 --- !u!114 &8951463841862961501
