@@ -5,13 +5,14 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject item;
-
     public Transform dropLocation;
-    
+
+    /*private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }*/
     public void SpawnDroppedItem()
     {
-        GameObject itemToDrop = Instantiate(item, dropLocation.position, Quaternion.identity);
-        //apply gravity and make sure its named correctly 
-        itemToDrop.AddComponent<Rigidbody>().useGravity = true;
+        Instantiate(item, dropLocation.position, Quaternion.identity);
     }
 }
