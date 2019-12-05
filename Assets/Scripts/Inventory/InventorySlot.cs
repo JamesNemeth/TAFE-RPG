@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour
 {
-    public RawImage icon;          // Reference to the Icon image
+    public Image icon;          // Reference to the Icon image
     public Button removeButton; // Reference to the remove button
     public int itemId = 0;
 
@@ -15,6 +15,10 @@ public class InventorySlot : MonoBehaviour
 
     public GameObject inventroySlot;
 
+    public void Start()
+    {
+        icon.enabled = true;
+    }
     // Add item to the slot
     public void AddItem(Item newItem)
     {
@@ -22,8 +26,7 @@ public class InventorySlot : MonoBehaviour
 
         LinearInventory.inv.Add(ItemData.CreateItem(itemId));
 
-        icon.texture = item.icon.texture;
-        icon.enabled = true;
+        icon.enabled = false;
         removeButton.interactable = true;
     }
 
@@ -33,7 +36,6 @@ public class InventorySlot : MonoBehaviour
     {
         item = null;
 
-        icon.texture = null;
         icon.enabled = false;
         removeButton.interactable = false;
 

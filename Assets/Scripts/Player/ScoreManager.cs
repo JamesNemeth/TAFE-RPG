@@ -74,50 +74,6 @@ public class ScoreManager : MonoBehaviour
 
         CharClassText.text = "" + charClass.ToString();
 
-        //if (startPoints >= 10)
-        //{
-        //    startPoints = 10;
-
-        //    ActivateIncreasedText(false);
-        //    ActivateDecreaseText(true);
-        //}
-        //else if (startPoints < 10)
-        //{
-        //    ActivateIncreasedText(true);
-        //    ActivateDecreaseText(true);
-        //}        
-        //else if (startPoints <= 0)
-        //{
-        //    startPoints = 0;
-
-        //    ActivateDecreaseText(false);
-        //    ActivateIncreasedText(true);
-        //}
-        //else if(startPoints > 0)
-        //{
-        //    ActivateIncreasedText(true);
-        //    ActivateDecreaseText(true);
-        //}
-
-        /*for (int s = 0; s < playerStats.Length; s++)
-        {
-            if (points > 0)
-            {
-                if (GUI.Button(new Rect(scr.x * 15.25f, 2 * scr.y + s * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), "+"))
-                {
-                    StatsDown(s);
-                }
-            }
-            GUI.Box(new Rect(scr.x * 13.75f, 2 * scr.y + s * (0.5f * scr.y), 1.5f * scr.x, scr.y * 0.5f), playerStats[s].statName + ": " + (playerStats[s].statValue + playerStats[s].tempStat));
-
-            if (points < 10 && playerStats[s].tempStat > 0)
-            {
-                if (GUI.Button(new Rect(scr.x * 13.25f, 2 * scr.y + s * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), "-"))
-                {
-                    StatsUp(s);
-                }
-            }
-        }*/
     }
 
     public void StatsDown(int s)
