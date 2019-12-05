@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class KeyBinds : MonoBehaviour
 {
-    public KeyCode forward, backward, left, right, jump, sprint, tempKey;
+    public KeyCode forward, backward, left, right, tempKey;
     public Text forwardButton, backwardButton, leftButton, rightButton;
 
     void Start()
@@ -25,8 +25,10 @@ public class KeyBinds : MonoBehaviour
     }
     public void Forward()
     {
-        if(backward != KeyCode.None || left != KeyCode.None || right != KeyCode.None || jump != KeyCode.None || sprint != KeyCode.None)
+        //if the button is forward key
+        if (backward != KeyCode.None || left != KeyCode.None || right != KeyCode.None)
         {
+            // Set this key that the function is attached to as the tempKey
             tempKey = forward;
             forward = KeyCode.None;
         }
@@ -34,8 +36,10 @@ public class KeyBinds : MonoBehaviour
     }
     public void Backward()
     {
-        if (forward != KeyCode.None || left != KeyCode.None || right != KeyCode.None || jump != KeyCode.None || sprint != KeyCode.None)
+        //if the button is back key
+        if (forward != KeyCode.None || left != KeyCode.None || right != KeyCode.None)
         {
+            // Set this key that the function is attached to as the tempKey
             tempKey = backward;
             backward = KeyCode.None;
         }
@@ -43,8 +47,10 @@ public class KeyBinds : MonoBehaviour
     }
     public void Left()
     {
-        if (right != KeyCode.None || forward != KeyCode.None || backward != KeyCode.None || jump != KeyCode.None || sprint != KeyCode.None)
+        //if the button is left key
+        if (right != KeyCode.None || forward != KeyCode.None || backward != KeyCode.None)
         {
+            // Set this key that the function is attached to as the tempKey
             tempKey = left;
             left = KeyCode.None;
         }
@@ -52,8 +58,10 @@ public class KeyBinds : MonoBehaviour
     }
     public void Right()
     {
-        if (left != KeyCode.None || forward != KeyCode.None || backward != KeyCode.None || jump != KeyCode.None || sprint != KeyCode.None)
+        //if the button is right key
+        if (left != KeyCode.None || forward != KeyCode.None || backward != KeyCode.None)
         {
+            // Set this key that the function is attached to as the tempKey
             tempKey = right;
             right = KeyCode.None;
         }
@@ -64,8 +72,10 @@ public class KeyBinds : MonoBehaviour
         Event e = Event.current;
         if(forward == KeyCode.None)
         {
-            if (e.keyCode != backward || e.keyCode != left || e.keyCode != right || e.keyCode != jump || e.keyCode != sprint)
+            //if the button is forward key
+            if (e.keyCode != backward || e.keyCode != left || e.keyCode != right)
             {
+                // you can set this button as any key 
                 forward = e.keyCode;
                 forwardButton.text = forward.ToString();
             }
@@ -79,8 +89,10 @@ public class KeyBinds : MonoBehaviour
         }
         if (backward == KeyCode.None)
         {
-            if (e.keyCode != forward || e.keyCode != left || e.keyCode != right || e.keyCode != jump || e.keyCode != sprint)
+            //if the button is backward key
+            if (e.keyCode != forward || e.keyCode != left || e.keyCode != right)
             {
+                // you can set this button as any key 
                 backward = e.keyCode;
                 backwardButton.text = backward.ToString();
             }
@@ -94,8 +106,10 @@ public class KeyBinds : MonoBehaviour
         }
         if (left == KeyCode.None)
         {
-            if (e.keyCode != right || e.keyCode != forward || e.keyCode != backward || e.keyCode != jump || e.keyCode != sprint)
+            //if the button is left key
+            if (e.keyCode != right || e.keyCode != forward || e.keyCode != backward)
             {
+                // you can set this button as any key 
                 left = e.keyCode;
                 leftButton.text = left.ToString();
             }
@@ -109,8 +123,10 @@ public class KeyBinds : MonoBehaviour
         }
         if (right == KeyCode.None)
         {
-            if (e.keyCode != left || e.keyCode != forward || e.keyCode != backward || e.keyCode != jump || e.keyCode != sprint)
+            //if the button is right key
+            if (e.keyCode != left || e.keyCode != forward || e.keyCode != backward)
             {
+                // you can set this button as any key 
                 right = e.keyCode;
                 rightButton.text = right.ToString();
             }

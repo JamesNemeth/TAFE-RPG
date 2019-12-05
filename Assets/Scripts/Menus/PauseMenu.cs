@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        // At the start of the game _pasueMenu is assigned to the game object in the game with the tag Pausemenu
         _pauseMenu = GameObject.FindGameObjectWithTag("Pausemenu");
         isPaused = false;//not pasued 
         Time.timeScale = 1;//start time
@@ -19,6 +20,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
+        // when the button that is allocated to Cancel is pressed, do the TogglePause function
         if (Input.GetButtonDown("Cancel"))//press escape
         {
             TogglePause();//runs pause function
