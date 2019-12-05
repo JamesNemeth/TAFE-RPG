@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 7817955942648234681}
   - component: {fileID: 897363758645982514}
   - component: {fileID: 969631524147619762}
-  - component: {fileID: 2152398305793403116}
-  - component: {fileID: 4551349577662912596}
   m_Layer: 0
   m_Name: Health Potion
   m_TagString: Item
@@ -32,8 +30,9 @@ RectTransform:
   m_GameObject: {fileID: 897363758645982515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 16.42}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1.7262, z: 1}
+  m_Children:
+  - {fileID: 1265087561821754247}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,8 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59f735ebdd703b418fa0813513272bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 6009978061859859342, guid: f6cc13e2b875ee64fab1fbd56482d7cd,
-    type: 3}
+  itemButton: {fileID: 897363758645982515}
 --- !u!136 &969631524147619762
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -123,13 +121,60 @@ CapsuleCollider:
   m_Height: 0.99999994
   m_Direction: 1
   m_Center: {x: 0.0147198215, y: 0, z: 0}
---- !u!114 &2152398305793403116
+--- !u!1 &3747966597631022387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265087561821754247}
+  - component: {fileID: 7175479590924785639}
+  - component: {fileID: 5493399007256277473}
+  - component: {fileID: 6747117886819336221}
+  - component: {fileID: 1105352577113012454}
+  m_Layer: 0
+  m_Name: Health Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1265087561821754247
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747966597631022387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7380041071080434319}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7175479590924785639
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747966597631022387}
+  m_CullTransparentMesh: 0
+--- !u!114 &5493399007256277473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897363758645982515}
+  m_GameObject: {fileID: 3747966597631022387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -152,13 +197,13 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &4551349577662912596
+--- !u!114 &6747117886819336221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897363758645982515}
+  m_GameObject: {fileID: 3747966597631022387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -188,9 +233,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2152398305793403116}
+  m_TargetGraphic: {fileID: 5493399007256277473}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1105352577113012454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747966597631022387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129569c46d8fcd34c81407644357d151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 897363758645982515}
+  dropLocation: {fileID: 0}

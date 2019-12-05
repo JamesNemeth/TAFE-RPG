@@ -65,8 +65,8 @@ public class LinearInventory : MonoBehaviour
         inv.Add(ItemData.CreateItem(604));
         inv.Add(ItemData.CreateItem(700));
         showInv = true;
-    }*/
-  /*  private void Update()
+    }
+    private void Update()
     {
         if (Input.GetButtonDown("Inventory") && !PauseMenu.isPaused)
         {
@@ -93,8 +93,8 @@ public class LinearInventory : MonoBehaviour
         {
             inv[10].Amount++;
         }
-    }*/
-   /* void OnGUI()
+    }
+    void OnGUI()
     {
         if (showInv && !PauseMenu.isPaused)
         {
