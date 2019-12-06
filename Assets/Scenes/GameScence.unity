@@ -642,7 +642,6 @@ GameObject:
   - component: {fileID: 57344196}
   - component: {fileID: 57344199}
   - component: {fileID: 57344198}
-  - component: {fileID: 57344197}
   m_Layer: 5
   m_Name: HealthGlobeFill
   m_TagString: Untagged
@@ -670,21 +669,6 @@ RectTransform:
   m_AnchoredPosition: {x: -332.72, y: -153.4}
   m_SizeDelta: {x: 112.35, y: 123.71}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &57344197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57344195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5941c4b3367e7de4ab1e277059f946e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radialHealthIcon: {fileID: 57344198}
-  curHealth: 100
-  maxHealth: 100
 --- !u!114 &57344198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3302,7 +3286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21.600006}
+  m_AnchoredPosition: {x: 0, y: -21.599976}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &848887635
@@ -3739,7 +3723,6 @@ GameObject:
   - component: {fileID: 955377975}
   - component: {fileID: 955377974}
   - component: {fileID: 955377972}
-  - component: {fileID: 955377973}
   m_Layer: 5
   m_Name: ManaGlobeFill
   m_TagString: Untagged
@@ -3776,21 +3759,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &955377973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955377971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5941c4b3367e7de4ab1e277059f946e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radialHealthIcon: {fileID: 955377972}
-  curHealth: 100
-  maxHealth: 100
 --- !u!222 &955377974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6088,7 +6056,6 @@ GameObject:
   - component: {fileID: 1329720220}
   - component: {fileID: 1329720223}
   - component: {fileID: 1329720222}
-  - component: {fileID: 1329720221}
   m_Layer: 5
   m_Name: ManaGlobeFrame
   m_TagString: Untagged
@@ -6115,21 +6082,6 @@ RectTransform:
   m_AnchoredPosition: {x: -9.5, y: 0.000015258789}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1329720221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329720219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5941c4b3367e7de4ab1e277059f946e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radialHealthIcon: {fileID: 1329720222}
-  curHealth: 100
-  maxHealth: 100
 --- !u!114 &1329720222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7145,7 +7097,7 @@ MonoBehaviour:
   moveSpeed: 0
   walkSpeed: 6
   runSpeed: 12
-  croundSpeed: 3
+  crouchSpeed: 0
   jumpSpeed: 8
 --- !u!143 &1519018528
 CharacterController:
@@ -8639,7 +8591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1968620798
 MonoBehaviour:
   m_ObjectHideFlags: 0

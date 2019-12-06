@@ -232,60 +232,7 @@ public class Customisation : MonoBehaviour
         SetTexture("Clothes", Random.Range(0, clothesMax - 1));
         SetTexture("Armour", Random.Range(0, armourMax - 1));
     }
-        #endregion
-    void DisplayStats()
-    {
-        characterName = GUI.TextField(new Rect(scr.x * 6, scr.y * 7.5f, scr.x * 4, scr.y * 0.5f), characterName, 20);
-        int i = 0;
-        #region Class
-        if (GUI.Button(new Rect(scr.x * 13.25f, scr.y + i * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), "<"))
-        {
-            selectedIndex--;
-            if (selectedIndex < 0)
-            {
-                selectedIndex = 11;
-            }
-            ChooseClass(selectedIndex);
-        }
-        GUI.Box(new Rect(scr.x * 13.75f, scr.y + i * (0.5f * scr.y), scr.x * 1.5f, scr.y * 0.5f), charClass.ToString());
-        if (GUI.Button(new Rect(scr.x * 15.25f, scr.y + i * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), ">"))
-        {
-            selectedIndex++;
-            if (selectedIndex > 11)
-            {
-                selectedIndex = 0;
-            }
-            ChooseClass(selectedIndex);
-        }
-        i++;
-        #endregion
-        #region StatDistribution
-        //in variables public int points = 10
-        GUI.Box(new Rect(scr.x * 13.25f, scr.y + i * (0.5f * scr.y), scr.x * 2.5f, scr.y * 0.5f), "Points: " + points);
-
-        for (int s = 0; s < playerStats.Length; s++)
-        {
-            if (points > 0)
-            {
-                if (GUI.Button(new Rect(scr.x * 15.25f, 2 * scr.y + s * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), "+"))
-                {
-                    points--;
-                    playerStats[s].tempStat++;
-                }
-            }
-            GUI.Box(new Rect(scr.x * 13.75f, 2 * scr.y + s * (0.5f * scr.y), 1.5f * scr.x, scr.y * 0.5f), playerStats[s].statName + ": " + (playerStats[s].statValue + playerStats[s].tempStat));
-
-            if (points < 10 && playerStats[s].tempStat > 0)
-            {
-                if (GUI.Button(new Rect(scr.x * 13.25f, 2 * scr.y + s * (0.5f * scr.y), scr.x * 0.5f, scr.y * 0.5f), "-"))
-                {
-                    points++;
-                    playerStats[s].tempStat--;
-                }
-            }
-        }
-        #endregion
-    }
+    #endregion
     void ChooseClass(int className)
     {
         switch (className)
@@ -401,18 +348,3 @@ public class Customisation : MonoBehaviour
         }
     }
 }
-/*public enum CharacterClass
-{
-    Barbarian,
-    Bard,
-    Cleric,
-    Druid,
-    Fighter,
-    Wizard,
-    Warlock,
-    Sorcerer,
-    Monk,
-    Paladin,
-    Ranger,
-    Rogue
-}*/
