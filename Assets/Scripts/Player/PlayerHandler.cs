@@ -57,17 +57,20 @@ public class PlayerHandler : MonoBehaviour
 
     void Start()
     {
+        // playerAudion finds the AudioSource component attached to the object with this script on it
         playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        // if this in a new character
         if (!custom)
         {
             HealthChange();
             ManaChange();
             StaminaChange();
 
+            // testing health
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 damaged = true;
@@ -99,7 +102,8 @@ public class PlayerHandler : MonoBehaviour
                 Death();
             }
 
-            if (Input.GetKeyDown(KeyCode.X))
+            // testing mana
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 curMana -= 5;
             }
@@ -116,6 +120,7 @@ public class PlayerHandler : MonoBehaviour
                 ManaOverTime();
             }
 
+            // testing stamina
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 curStamina -= 1;
@@ -124,9 +129,9 @@ public class PlayerHandler : MonoBehaviour
             {
                 curStamina = 100;
             }
-            if (curStamina < 0)
+            if (curStamina < 1)
             {
-                curStamina = 0;
+                curStamina = 1;
             }
             if (curStamina < maxStamina && curStamina > 0 && canUseStamina)
             {
@@ -137,16 +142,21 @@ public class PlayerHandler : MonoBehaviour
 
     void HealthChange()
     {
+        // finds the amount inside of max and cur health
         float amount = Mathf.Clamp01(curHealth / maxHealth);
+        // makes it so the image can change depending on the number
+        // e.g a heart will be half a image at 50, at 100 the image will be full
         radialHealthIcon.fillAmount = amount;
 
         if (curHealth <= 0 && !isDead)
         {
+            // if the health reached zero, do the Death() function
             Death();
         }
 
         if (!canHeal && curHealth < maxHealth && curHealth > 0)
         {
+            // you will be able to heal if your health is above 0 and below 100
             healTimer += Time.deltaTime;
             if (healTimer >= 5)
             {
@@ -156,9 +166,12 @@ public class PlayerHandler : MonoBehaviour
     }
     void ManaChange()
     {
+        // finds the amount inside of max and cur health
         float amount = Mathf.Clamp01(curMana / maxMana);
+        // makes it so the image can change depending on the number
         radialManaIcon.fillAmount = amount;
 
+        // you will be able to heal if your mana is above 0 and below 100
         if (!canUseMana && curMana < maxMana && curMana > 0)
         {
             manaTimer += Time.deltaTime;
@@ -170,9 +183,12 @@ public class PlayerHandler : MonoBehaviour
     }
     void StaminaChange()
     {
+        // finds the amount inside of max and cur health
         float amount = Mathf.Clamp01(curStamina / maxStamina);
+        // makes it so the image can change depending on the number
         radialStaminaIcon.fillAmount = amount;
 
+        // you will be able to heal if your stamina is above 0 and below 100
         if (!canUseStamina && curStamina < maxStamina && curStamina > 0)
         {
             staminaTimer += Time.deltaTime;
@@ -184,6 +200,8 @@ public class PlayerHandler : MonoBehaviour
     }
     void Death()
     {
+        // if you die, you will go through a death animation if text saying you died
+        // you will then revive after nine seconds 
         isDead = true;
         text.text = "";
 
@@ -197,6 +215,7 @@ public class PlayerHandler : MonoBehaviour
     }
     void Revive()
     {
+        // you will be alive and revive at the last check point you reached and all your stats will be full
         text.text = "";
         isDead = false;
         curHealth = maxHealth;
@@ -220,15 +239,17 @@ public class PlayerHandler : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        // if you get to a checkpoint, the game will save and you will heal faster
         if (other.gameObject.CompareTag("CheckPoint"))
         {
             curCheckPoint = other.transform;
             healRate = 5;
-            //saveAndLoad.Save();
+            saveAndLoad.Save();
         }
     }
     private void OnTriggerExit(Collider other)
     {
+        // the heal rate will go back to normal when you lave the checkpoint
         if (other.gameObject.CompareTag("CheckPoint"))
         {
             healRate = 0;
@@ -236,6 +257,7 @@ public class PlayerHandler : MonoBehaviour
     }
     public void DamagePlayer(float damage)
     {
+        // you will lose health based on the number set on damage and you can heal for a duration
         damaged = true;
         curHealth -= damage;
         canHeal = false;
@@ -243,14 +265,17 @@ public class PlayerHandler : MonoBehaviour
     }
     public void HealOverTime()
     {
+        // your curhealth will be plused with the number set on heal rate at real time
         curHealth += Time.deltaTime * healRate;
     }
     public void ManaOverTime()
     {
+        // your curhealth will be plused with the number set on heal rate at real time
         curMana += Time.deltaTime * ManaPerSecond;
     }
     public void StaminaOverTime()
     {
+        // your curhealth will be plused with the number set on heal rate at real time
         curStamina += Time.deltaTime * staminaPerSecond;
     }
 }
